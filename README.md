@@ -1,2 +1,2 @@
-# Manage-a-Book-Trading-Club-FreeCodeCamp
-Manage a Book Trading Club - MERN 
+# Build-a-Pinterest-Clone-FreeCodeCamp
+Build a Pinterest Clone - MERN 
