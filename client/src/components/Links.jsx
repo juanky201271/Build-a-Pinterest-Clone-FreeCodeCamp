@@ -4,13 +4,13 @@ import styled from 'styled-components'
 
 const Collapse = styled.div.attrs({ className: "collapse navbar-collapse" })``
 const List = styled.div.attrs({ className: "navbar-nav mr-auto" })``
-const Item = styled.div.attrs({ className: "collapse navbar-collapse" })``
-const Log = styled.div.attrs({ className: "navbar-brand" })`
+const Item = styled.div.attrs({ className: "collapse navbar-collapse text-dark" })``
+const Log = styled.div.attrs({ className: "navbar-brand text-dark" })`
   cursor: pointer;
 `
 const Name = styled.div`
-  color: #fff;
-  background: #666;
+  color: #000;
+  background: #cc88cc;
   padding: 5px;
 `
 const Pic = styled.img`
@@ -51,12 +51,12 @@ class Links extends Component {
                   }}
           className="navbar-brand"
         >
-          Books Exchange
+          <Log>Clone-terest</Log>
         </Link>
         <Collapse>
           <List>
 
-            <Item>
+
               <Link to={{ pathname: "/",
                           state: {
                             authenticated: authenticated,
@@ -67,146 +67,53 @@ class Links extends Component {
                         }}
                 className="nav-link"
               >
-                Books
+                <Item>Clones</Item>
               </Link>
-            </Item>
 
-            <Item>
+
+
               {
                 authenticated ? (
-                  <Link to={{ pathname: "/mybooks",
+                  <Link to={{ pathname: "/myclones",
                               state: {
                                 authenticated: authenticated,
                                 user_id: user_id,
                                 user: user,
-                                backURL: '/mybooks',
+                                backURL: '/myclones',
                               }
                             }}
                     className="nav-link"
                   >
-                    My Books
+                    <Item>My CloneBoard</Item>
                   </Link>
                 ) : (
                   <div></div>
                 )
               }
-            </Item>
 
-            <Item>
+
+
             {
               authenticated ? (
-                <Link to={{ pathname: "/book/insert",
+                <Link to={{ pathname: "/clone/insert",
                             state: {
                               authenticated: authenticated,
                               user_id: user_id,
                               user: user,
-                              backURL: '/mybooks',
+                              backURL: '/myclones',
                             }
                           }}
                   className="nav-link"
                 >
-                  Create Book
+                  <Item>Create Clone</Item>
                 </Link>
               ) : (
                 <div></div>
               )
             }
-            </Item>
 
-            <Item>
-              <Link to={{ pathname: "/requests",
-                          state: {
-                            authenticated: authenticated,
-                            user_id: user_id,
-                            user: user,
-                            backURL: '/requests',
-                          }
-                        }}
-                className="nav-link"
-              >
-                Requests
-              </Link>
-            </Item>
 
-            <Item>
-              {
-                authenticated ? (
-                  <Link to={{ pathname: "/myrequests",
-                              state: {
-                                authenticated: authenticated,
-                                user_id: user_id,
-                                user: user,
-                                backURL: '/myrequests',
-                              }
-                            }}
-                    className="nav-link"
-                  >
-                    My Requests
-                  </Link>
-                ) : (
-                  <div></div>
-                )
-              }
-            </Item>
 
-            <Item>
-            {
-              authenticated ? (
-                <Link to={{ pathname: "/request/insert",
-                            state: {
-                              authenticated: authenticated,
-                              user_id: user_id,
-                              user: user,
-                              backURL: '/myrequests',
-                            }
-                          }}
-                  className="nav-link"
-                >
-                  Create Request
-                </Link>
-              ) : (
-                <div></div>
-              )
-            }
-            </Item>
-
-            <Item>
-              <Link to={{ pathname: "/trades",
-                          state: {
-                            authenticated: authenticated,
-                            user_id: user_id,
-                            user: user,
-                            backURL: '/trades',
-                          }
-                        }}
-                className="nav-link"
-              >
-                Trades
-              </Link>
-            </Item>
-
-            <Item>
-              {
-                authenticated ? (
-                  <Link to={{ pathname: "/mytrades",
-                              state: {
-                                authenticated: authenticated,
-                                user_id: user_id,
-                                user: user,
-                                backURL: '/mytrades',
-                              }
-                            }}
-                    className="nav-link"
-                  >
-                    My Trades
-                  </Link>
-                ) : (
-                  <div></div>
-                )
-              }
-            </Item>
-
-            <Item>
               <Link to={{ pathname: "/users",
                           state: {
                             authenticated: authenticated,
@@ -217,9 +124,9 @@ class Links extends Component {
                         }}
                 className="nav-link"
               >
-                Users
+                <Item>Users</Item>
               </Link>
-            </Item>
+
 
           </List>
           {

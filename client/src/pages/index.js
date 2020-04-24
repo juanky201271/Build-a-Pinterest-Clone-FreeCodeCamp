@@ -1,36 +1,18 @@
-import BooksList from './BooksList'
-import BooksInsert from './BooksInsert'
-import BooksUpdate from './BooksUpdate'
-import MyBooksList from './MyBooksList'
-import BooksRequests from './BooksRequests'
-
-import RequestsList from './RequestsList'
-import RequestsInsert from './RequestsInsert'
-import MyRequestsList from './MyRequestsList'
+import ClonesList from './ClonesList'
+import ClonesInsert from './ClonesInsert'
+import ClonesUpdate from './ClonesUpdate'
+import MyClonesList from './MyClonesList'
 
 import UsersList from './UsersList'
 import UsersUpdate from './UsersUpdate'
-import UsersBooks from './UsersBooks'
-import UsersRequests from './UsersRequests'
+import UsersClones from './UsersClones'
 
-import TradesList from './TradesList'
-import MyTradesList from './MyTradesList'
-
-export { BooksList,
-         BooksInsert,
-         BooksUpdate,
-         MyBooksList,
-         BooksRequests,
-
-         RequestsList,
-         RequestsInsert,
-         MyRequestsList,
+export { ClonesList,
+         ClonesInsert,
+         ClonesUpdate,
+         MyClonesList,
 
          UsersList,
          UsersUpdate,
-         UsersBooks,
-         UsersRequests,
-
-         TradesList,
-         MyTradesList,
+         UsersClones,
         }

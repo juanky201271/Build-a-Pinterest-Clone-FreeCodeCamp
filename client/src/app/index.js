@@ -1,23 +1,14 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-
-import { NavBar } from '../components'
-import { BooksList,
-         BooksInsert,
-         BooksUpdate,
-         MyBooksList,
-         BooksRequests,
-         RequestsList,
-         RequestsInsert,
-         MyRequestsList,
+import { NavBar, } from '../components'
+import { ClonesList,
+         ClonesInsert,
+         ClonesUpdate,
+         MyClonesList,
          UsersList,
-         UsersBooks,
-         UsersRequests,
+         UsersClones,
          UsersUpdate,
-         TradesList,
-         MyTradesList,
        } from '../pages'
-
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 class App extends Component {
@@ -87,22 +78,13 @@ class App extends Component {
               user={user}
             />
             <Switch>
-              <Route path="/" exact component={BooksList} />
-              <Route path="/book/insert" exact component={BooksInsert} />
-              <Route path="/book/:_id/update" exact component={BooksUpdate} />
-              <Route path="/book/:_id/requests" exact component={BooksRequests} />
-              <Route path="/mybooks" exact component={MyBooksList} />
-              <Route path="/requests" exact component={RequestsList} />
-              <Route path="/request/insert" exact component={RequestsInsert} />
-              <Route path="/myrequests" exact component={MyRequestsList} />
+              <Route path="/" exact component={ClonesList} />
+              <Route path="/clone/insert" exact component={ClonesInsert} />
+              <Route path="/clone/:_id/update" exact component={ClonesUpdate} />
+              <Route path="/myclones" exact component={MyClonesList} />
               <Route path="/users" exact component={UsersList} />
-              <Route path="/user/:_id" render={(props) => (
-                <UsersUpdate key={props.match.params._id} {...props} />
-              )} />
-              <Route path="/user/:_id/books" exact component={UsersBooks} />
-              <Route path="/user/:_id/requests" exact component={UsersRequests} />
-              <Route path="/trades" exact component={TradesList} />
-              <Route path="/mytrades" exact component={MyTradesList} />
+              <Route path="/user/:_id" exact component={UsersUpdate} />
+              <Route path="/user/:_id/clones" exact component={UsersClones} />
               <Redirect to="/" />
             </Switch>
           </>
@@ -116,14 +98,10 @@ class App extends Component {
               user={user}
             />
             <Switch>
-              <Route path="/" exact component={BooksList} />
-              <Route path="/book/:_id/requests" exact component={BooksRequests} />
-              <Route path="/requests" exact component={RequestsList} />
+              <Route path="/" exact component={ClonesList} />
               <Route path="/users" exact component={UsersList} />
               <Route path="/user/:_id" exact component={UsersUpdate} />
-              <Route path="/user/:_id/books" exact component={UsersBooks} />
-              <Route path="/user/:_id/requests" exact component={UsersRequests} />
-              <Route path="/trades" exact component={TradesList} />
+              <Route path="/user/:_id/clones" exact component={UsersClones} />
               <Redirect to="/" />
             </Switch>
           </>

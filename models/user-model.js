@@ -13,5 +13,14 @@ const Users = new Schema({
   city: 'String',
   state: 'String',
   address: 'String',
+  // counters
+  likes: [{
+    type: Schema.Types.ObjectId,
+    ref: 'bpc-clones'
+  }],
+  views: [{
+    type: Schema.Types.ObjectId,
+    ref: 'bpc-clones'
+  }],
 })
-module.exports = mongoose.model("BTC-users", Users)
+module.exports = mongoose.model("bpc-users", Users)

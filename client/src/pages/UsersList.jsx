@@ -39,7 +39,7 @@ class UsersList extends Component {
     }
     render() {
       console.log('users', this.state)
-        const { users, isLoading, user_id, } = this.state
+        const { users, isLoading, } = this.state
         const columns = [
           {
               Header: 'ID',
@@ -83,7 +83,7 @@ class UsersList extends Component {
                   return (
                     <span>
                       <React.Fragment>
-                        <Link to={{ pathname: `/user/${props.original._id}`,
+                        <Link to={{ pathname: `/user/${props.original._id}/clones`,
                                 state: {
                                   authenticated: this.state.authenticated,
                                   user_id: this.state.user_id,
@@ -91,49 +91,7 @@ class UsersList extends Component {
                                   backURL: '/users'
                                 }
                               }}
-                              className={ props.original._id === user_id  ? 'nav-link text-success' : 'nav-link'} >{ props.original._id === user_id  ? 'Update' : 'View'}</Link>
-                      </React.Fragment>
-                    </span>
-                  )
-              }.bind(this),
-          },
-          {
-              Header: '',
-              accessor: '',
-              Cell: function(props) {
-                  return (
-                    <span>
-                      <React.Fragment>
-                        <Link to={{ pathname: `/user/${props.original._id}/requests`,
-                                state: {
-                                  authenticated: this.state.authenticated,
-                                  user_id: this.state.user_id,
-                                  user: this.state.user,
-                                  backURL: '/users'
-                                }
-                              }}
-                              className="nav-link" >Requests</Link>
-                      </React.Fragment>
-                    </span>
-                  )
-              }.bind(this),
-          },
-          {
-              Header: '',
-              accessor: '',
-              Cell: function(props) {
-                  return (
-                    <span>
-                      <React.Fragment>
-                        <Link to={{ pathname: `/user/${props.original._id}/books`,
-                                state: {
-                                  authenticated: this.state.authenticated,
-                                  user_id: this.state.user_id,
-                                  user: this.state.user,
-                                  backURL: '/users'
-                                }
-                              }}
-                              className="nav-link" >Books</Link>
+                              className={'nav-link'} >{'Clones'}</Link>
                       </React.Fragment>
                     </span>
                   )
